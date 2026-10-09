@@ -48,7 +48,6 @@ CLASS_NAMES = {
         "Egyptian Mau",
         "English Cocker Spaniel",
         "English Setter",
-        "German Shepherd",
         "German Shorthaired",
         "Great Pyrenees",
         "Havanese",
@@ -70,7 +69,8 @@ CLASS_NAMES = {
         "Siamese",
         "Sphynx",
         "Staffordshire Bull Terrier",
-        "Wheaten Terrier"
+        "Wheaten Terrier",
+        "Yorkshire Terrier"
     ]
 }
 
@@ -171,7 +171,7 @@ def plot_confusion_matrix(model, dataset, dataset_name = "mnist"):
     plt.title(f'Confusion Matrix ({dataset_name} Dataset)')
 
     os.makedirs("outputs", exist_ok=True)
-    path_to_save_cm = f"outputs/resnet50_{dataset_name}_confusion_matrix.png"
+    path_to_save_cm = f"outputs/mobilenet_{dataset_name}_confusion_matrix.png"
     plt.savefig(path_to_save_cm, dpi=300, bbox_inches='tight')
 
     plt.show()
@@ -219,7 +219,7 @@ def plot_sample_predictions(model, dataset, dataset_name="mnist", num_samples=10
     plt.tight_layout()
     
     os.makedirs("outputs", exist_ok=True)
-    path_to_save_samples = f"outputs/resnet50_{dataset_name}_sample_predictions.png"
+    path_to_save_samples = f"outputs/mobilenet_{dataset_name}_sample_predictions.png"
     plt.savefig(path_to_save_samples, dpi=300, bbox_inches='tight')
 
     plt.show()

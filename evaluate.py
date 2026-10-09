@@ -1,11 +1,6 @@
 import argparse
 import os
 
-import numpy as np
-import pandas as pd
-import tensorflow as tf
-from tensorflow.keras import losses, metrics, models
-
 from data.dataset import prepare_cifar10_dataset, prepare_imagenette_dataset, prepare_oxford_pet_dataset
 from models.model import MobileNet
 from models.loader import load_history_from_csv, load_model
@@ -18,7 +13,7 @@ def parse_args():
         "--dataset",
         type=str,
         default="cifar10",
-        choices=["cifar10", "imagenette"],
+        choices=["cifar10", "imagenette", "oxford_pet"],
         help="Dataset name to evaluate on"
     )
     parser.add_argument(
@@ -89,7 +84,7 @@ def evaluate():
 
     plot_confusion_matrix(model, test_data, dataset_name=dataset_name)
 
-    plot_sample_predictions(trainer, test_data, dataset_name=dataset_name)
+    plot_sample_predictions(model, test_data, dataset_name=dataset_name)
 
 if __name__ == "__main__":
     evaluate()
