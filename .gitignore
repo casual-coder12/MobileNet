@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+.venv
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE and OS
+.vscode/
+Thumbs.db
+
+# Project specific files
+outputs/
+notebooks/outputs/
+saved_models/
+data/dataset_copy.py
