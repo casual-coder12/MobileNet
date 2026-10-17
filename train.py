@@ -66,20 +66,19 @@ def main():
     """
     args = parse_args()
   
+    input_shape = (224, 224, 3)  # Default input shape for MobileNet
+
     print(f"=== Starting Training on {args.dataset.upper()} Dataset ===")
 
     # Get the appropriate dataset
     if args.dataset == "cifar10":
         train_data, val_data, test_data = prepare_cifar10_dataset(batch_size=args.batch_size)
-        input_shape = (32, 32, 3)
         num_classes = 10
     elif args.dataset == "imagenette":
         train_data, val_data, test_data = prepare_imagenette_dataset(batch_size=args.batch_size)
-        input_shape = (224, 224, 3)
         num_classes = 10
     elif args.dataset == "oxford_pet":
         train_data, val_data, test_data = prepare_oxford_pet_dataset(batch_size=args.batch_size)
-        input_shape = (224, 224, 3)
         num_classes = 37
     else:
         raise ValueError("Invalid dataset name. Choose 'cifar10', 'imagenette', or 'oxford_pet'.")
