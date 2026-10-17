@@ -63,8 +63,6 @@ python train.py --dataset oxford_pet
 
 Training options include `--w_epochs`, `--f_epochs`, `--batch_size`, `--head_lr`, `--fine_tune_lr`, `--save_type` (`w`, `m`, or `both`), and `--load_checkpoint`. Run `python train.py --help` for the available options and defaults.
 
-**CIFAR-10 input-size note:** the dataset loader resizes images to 224×224, while `train.py` currently constructs the CIFAR-10 model with a 32×32 input shape. These sizes need to be made consistent before using the training CLI with CIFAR-10.
-
 ### Evaluate
 
 Evaluate a saved best Imagenette model:
@@ -73,7 +71,7 @@ Evaluate a saved best Imagenette model:
 python evaluate.py --dataset imagenette --load_type b
 ```
 
-The evaluator supports loading weights (`w`), a complete saved model (`m`), or the best-validation-loss model (`b`). The current command-line choices are CIFAR-10 and Imagenette. Oxford-IIIT Pet results are available in the notebook; it is not currently an accepted `evaluate.py --dataset` choice.
+The evaluator supports loading weights (`w`), a complete saved model (`m`), or the best-validation-loss model (`b`). The current command-line choices are CIFAR-10, Imagenette, and Oxford-IIIT Pet. Results are available in the notebook.
 
 ## Results
 
